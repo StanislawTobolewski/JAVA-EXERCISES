@@ -20,16 +20,32 @@ Zarobek         Stopa procentowa podatku
 public class Zarobki {
 
     public static void main(String[] args) {
+
+        Firma firma1 = new Firma("Porąbana", 1111111111);
+
         //Stawka [zł/godz.]    //A   15    //B   25  //C   30   //D   35
         Pracownik prac1 = new Pracownik("Janusz", "Nowak", 'B', 40);
         prac1.setTygodniowyCzasPracy(60);
-        prac1.sprawdzKategorie();
+        firma1.sprawdzKategorie(prac1);
+        firma1.obliczWynagrodzenieBrutto(prac1);
         prac1.getData();
 
-        Pracownik prac2 = new Pracownik("Grażyna", "Kowalska", 'C', 40);
-        prac2.setTygodniowyCzasPracy(50);
-        prac2.sprawdzKategorie();
-        prac2.getData();
+        System.out.printf("\n\n-------------------URZĄD SKARBOWY próg podatkowy 2000----------------------\n\n");
+
+        UrzadSkarbowy US = new UrzadSkarbowy("I Urząd Skarbowy", "ul. długa 45, Bąbolewo", "32-891");
+        US.zmienIIProgPodatkowy(prac1, 2000);
+        firma1.obliczWynagrodzenieBrutto(prac1);
+        prac1.getData();
+
+        System.out.printf("\n\n-------------------ZMIANA PROGU PODATKOWEGO zmiana kate zarobkowej -> A 15/h ----------------------\n\n");
+
+        Pracodawca p = new Pracodawca();
+
+        p.zmienKategorie(prac1,'A');
+        firma1.sprawdzKategorie(prac1);
+        firma1.obliczWynagrodzenieBrutto(prac1);
+        prac1.getData();
+
     }
 
 }
