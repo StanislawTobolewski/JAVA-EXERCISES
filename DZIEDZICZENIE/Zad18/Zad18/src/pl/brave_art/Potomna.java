@@ -5,8 +5,12 @@ public class Potomna extends Bazowa{
 
     Potomna(){}
 
-    protected int pobierzWartość(boolean bool){
+    protected int pobierzWartość(boolean bool) {
         return (bool) ? this.liczba : super.liczba;
-        }
+    }
+    protected void ustawWartosc(int w, boolean test){
+        if(test){this.liczba = w;}
+        else {super.liczba = w;}
+    }
 
 }
