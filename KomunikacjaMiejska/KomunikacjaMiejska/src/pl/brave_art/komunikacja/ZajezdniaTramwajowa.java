@@ -15,7 +15,8 @@ public class ZajezdniaTramwajowa extends Zajezdnia{
         String data = "\n====== DANE ZAJEZDNI ======\n"+
                       "Zajezdnia imienia: " + getNazwaZajezdni() + "\n" +
                       "Typ zajezdni: " + getTypZajezdni() + "\n" +
-                      "Liczba zarejestrowanych tramwai: " + tramwajeWZajezdni.size();
+                      "Liczba zarejestrowanych tramwai: " + tramwajeWZajezdni.size() + "\n" +
+                      "Sumaryczna ilość wagonów: " + ogolnaIloscWagonow;
         System.out.println(data);
     }
     public static void addTramwaj(Tramwaj a){

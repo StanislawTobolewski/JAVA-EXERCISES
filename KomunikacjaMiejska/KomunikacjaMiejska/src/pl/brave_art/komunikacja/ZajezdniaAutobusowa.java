@@ -15,7 +15,8 @@ public class ZajezdniaAutobusowa extends Zajezdnia{
         String data = "\n====== DANE ZAJEZDNI ======\n"+
                 "Zajezdnia imienia: " + getNazwaZajezdni() + "\n" +
                 "Typ zajezdni: " + getTypZajezdni() + "\n" +
-                "Liczba zarejestrowanych autobusów: " + autobusyWZajezdni.size();
+                "Liczba zarejestrowanych autobusów: " + autobusyWZajezdni.size() + "\n" +
+                "Ogólne miesięczne zużycie paliwa: " + ogolneMiesieczneZuzyciePaliwa;
         System.out.println(data);
     }
     public static void addAutobus(Autobus a){
